@@ -9,4 +9,11 @@
     {:name "Eclipse Public License - v 1.0"
      :url "http://www.eclipse.org/legal/epl-v10.html"
      :distribution :repo}
-  :dependencies [[org.clojure/clojure "1.5.1"]])
+  :dependencies [[org.clojure/clojure "1.5.1"]]
+
+  :deploy-repositories [["snapshots" {:url "http://nexus.delivery.puppetlabs.net/content/repositories/snapshots/"
+                                      :sign-releases false}]]
+
+
+
+)
