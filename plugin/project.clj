@@ -1,4 +1,4 @@
-(defproject cprice404/lein-cljsbuild "1.1.2-noexit-SNAPSHOT"
+(defproject cprice404/lein-cljsbuild "1.1.2-noexit"
   :description "ClojureScript Autobuilder Plugin"
   :url "http://github.com/emezeske/lein-cljsbuild"
   :license
@@ -14,4 +14,8 @@
         [midje "1.6.3"]
         [cljsbuild "1.1.2"]]
       :plugins [[lein-midje "3.1.3"]]}}
+
+  :deploy-repositories [["releases" {:url "https://clojars.org/repo"
+                                     :sign-releases false}]]
+
   :eval-in-leiningen true)
