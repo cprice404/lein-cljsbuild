@@ -7,7 +7,8 @@
     [clojure.string :as string]))
 
 (def cljsbuild-version
-  (let [[_ coords version]
+  "1.1.2"
+  #_(let [[_ coords version]
         (-> (or (resource "META-INF/leiningen/lein-cljsbuild/lein-cljsbuild/project.clj")
                 ; this should only ever come into play when testing cljsbuild itself
                 "project.clj")
