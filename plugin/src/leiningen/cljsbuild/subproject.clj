@@ -13,7 +13,7 @@
                 "project.clj")
             slurp
             read-string)]
-    (assert (= coords 'lein-cljsbuild)
+    (assert (= coords 'puppetlabs/lein-cljsbuild)
             (str "Something very wrong, could not find lein-cljsbuild's project.clj, actually found: "
                  coords))
     (assert (string? version)
@@ -24,7 +24,7 @@
 (def required-clojure-version "1.5.1")
 
 (def cljsbuild-dependencies
-  [['cljsbuild cljsbuild-version]
+  [['puppetlabs/cljsbuild cljsbuild-version]
    ['org.clojure/clojure required-clojure-version]])
 
 (defn- numeric-version [v]
