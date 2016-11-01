@@ -1,10 +1,11 @@
-(defproject cljsbuild "1.1.4"
+(defproject cljsbuild "1.1.5-SNAPSHOT"
   :description "ClojureScript Autobuilder"
   :url "http://github.com/emezeske/lein-cljsbuild"
   :license
     {:name "Eclipse Public License - v 1.0"
      :url "http://www.eclipse.org/legal/epl-v10.html"
      :distribution :repo}
+  :min-lein-version "2.7.1"
   :dependencies
     [[org.clojure/clojure "1.5.1"]
      [org.clojure/clojurescript "0.0-3211"

@@ -3,7 +3,8 @@
   (:require
     [leiningen.core.main :as lmain]
     [clojure.java.io :refer (resource)]
-    [clojure.string :as string]))
+    [clojure.string :as string]
+    [leiningen.core.classpath :as classpath]))
 
 (def cljsbuild-version
   (let [[_ coords version]
@@ -71,13 +72,18 @@
          (map (fn [[k v]] (vec (cons k v)))))))
 
 (defn make-subproject [project crossover-path builds]
-  (with-meta
-    (merge
+  (let [deps (classpath/merge-versions-from-managed-coords
+              (get project :dependencies)
+              (get project :managed-dependencies))]
+    (with-meta
+     (merge
       project
       {:local-repo-classpath true
-       :dependencies (merge-dependencies (:dependencies project))
+       :dependencies (merge-dependencies deps)
        :source-paths (concat
-                       (:source-paths project)
-                       (mapcat :source-paths builds)
-                       [crossover-path])})
-    (meta project)))
+                      (:source-paths project)
+                      (mapcat :source-paths builds)
+                      [crossover-path])})
+     (meta project))))
+
+
