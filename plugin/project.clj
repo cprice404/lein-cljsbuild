@@ -1,4 +1,4 @@
-(defproject puppetlabs/lein-cljsbuild "1.1.5-pl1-SNAPSHOT"
+(defproject puppetlabs/lein-cljsbuild "1.1.5-pl1"
   :description "ClojureScript Autobuilder Plugin"
   :url "http://github.com/emezeske/lein-cljsbuild"
   :license
@@ -10,6 +10,6 @@
     :dev {
       :dependencies [
         [midje "1.6.3"]
-        [puppetlabs/cljsbuild "1.1.5-pl1-SNAPSHOT"]]
+        [puppetlabs/cljsbuild "1.1.5-pl1"]]
       :plugins [[lein-midje "3.1.3"]]}}
   :eval-in-leiningen true)
