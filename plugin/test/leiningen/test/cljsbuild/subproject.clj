@@ -20,11 +20,11 @@
 
 (fact
   (let [original [clojure-dependency ['a "1"] ['b "2"]]
-        merged (conj original ['cljsbuild cljsbuild-version])]
+        merged (conj original ['puppetlabs/cljsbuild cljsbuild-version])]
     (merge-dependencies original) => (just merged :in-any-order))
 
   (let [original [['a "1"] ['b "2"]]
-        merged (concat original [clojure-dependency ['cljsbuild cljsbuild-version]])]
+        merged (concat original [clojure-dependency ['puppetlabs/cljsbuild cljsbuild-version]])]
     (merge-dependencies original) => (just merged :in-any-order)))
 
 (def lein-crossover ".crossovers")
@@ -32,7 +32,7 @@
 (def lein-source-paths ["src-clj"])
 (def lein-extra-classpath-dirs ["a" "b"])
 (def lein-dependencies [clojure-dependency ['a "1"]])
-(def expected-dependencies (conj lein-dependencies ['cljsbuild cljsbuild-version]))
+(def expected-dependencies (conj lein-dependencies ['puppetlabs/cljsbuild cljsbuild-version]))
 (def lein-repositories ["repository"])
 (def lein-builds [{:source-paths lein-build-source-paths}])
 
